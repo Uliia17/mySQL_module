@@ -1,0 +1,18 @@
+use uliia17;
+show tables;
+select * from cars where year > 2000;
+select * from cars where year < 2015;
+select * from cars where year in (2008,2009,2010);
+select * from cars where year not in (2008,2009,2010);
+select * from cars where year = price;
+select * from cars where model = 'BMW' and year > 2014;
+select * from cars where model = 'Audi' and year < 2014;
+select * from cars limit 5;
+select * from cars order by id desc limit 5;
+select avg(price) from cars where model = 'KIA';
+select avg(price), model as avg from cars group by model;
+select count(*), model as count from cars group by model;
+select model, count(*) as count from cars group by model order by count desc limit 1;
+select * from cars where model like '_a%a_';
+select * from cars where length(model) > 8;
+select model, price from cars where price > (select avg(price) from cars);
